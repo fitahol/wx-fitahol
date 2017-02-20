@@ -1,4 +1,5 @@
-#wx-fitahol 开发文档#
+#wx-fitahol 开发文档
+小程序持续优化中，未上线；对应app开发中，待上线。
 
 #APP示例
 <img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3820.PNG" width = "200" alt="图片名称" align=center />

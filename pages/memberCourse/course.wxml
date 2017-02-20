@@ -1,0 +1,26 @@
+<!--course.wxml-->
+<import src="../../components/courseHealthCom.wxml" />
+<import src="courseItem.wxml" />
+<view class="page">
+	<template is="coursehealthcom" data="{{lastInfo}}"></template>
+	<!-- 已购课程展示 -->
+	<view class="purchased-course-wrap">
+		<view>
+			已购课程{{purchasedData.amount}}课时。完成{{purchasedData.alreadyCourse}}节，剩余{{purchasedData.remain}}节。
+		</view>
+		<view class="purchased-btn">
+			<button class="btn mini-btn" type="default" bindtap="redirectHistory" size="mini">历史课时</button>
+			<button class="btn mini-btn" type="primary" bindtap="addCourse" size="mini">修改课时</button>
+		</view>
+	</view>
+	<!--  课程列表 -->
+	<template is="courseitem" data="{{courseRecord, editorId, editorWeight, editorTimes}}"></template>
+	<!-- 添加动作 -->
+	<view class="footer-course flex">
+		 <navigator wx:if="{{event_state === '0'}}" url="/pages/addAction/action?user_id={{user_id}}&event_id={{event_id}}" class="confirm footer-course-btn flex__item" hover-class="form-preview__btn_active">添加动作</navigator>
+		 <view wx:elif="{{event_state === '-1'}}" class="finish footer-course-btn flex__item" hover-class="form-preview__btn_active">休息中</view>
+		 <view wx:else class="finish footer-course-btn flex__item" hover-class="form-preview__btn_active">已结课</view>
+		 <view wx:if="{{event_state === '-1'}}" wx:key="finish_{{event_id}}" data-id="{{event_id}}" bindtap="deleteCourse" class="active footer-course-btn flex__item" hover-class="form-preview__btn_active">消取休息</view>
+		 <view wx:else wx:key="finish_{{event_id}}" data-id="{{event_id}}" bindtap="deleteCourse" class="active footer-course-btn flex__item" hover-class="form-preview__btn_active">删除课程</view>
+	 </view>
+</view>

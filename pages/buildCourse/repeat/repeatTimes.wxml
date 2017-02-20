@@ -1,0 +1,14 @@
+<!-- 重复次数 -->
+<template name="repeattimes">
+	<view class="form-preview repeat-times-wrap" wx:if="{{ruleIndex === 5}}">
+		<view class="form-preview__hd select-list-wrap">
+			<view class="form-preview__item">
+				<view class="form-preview__label">重复次数</view>
+				<view class="form-preview__value">
+					 <text style="float:right">次</text>
+					 <input type="number" maxlength="3" placeholder="0" style="float:right" placeholder-style="color:#ff4081" bindinput="changeRepeatTimes"/>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>

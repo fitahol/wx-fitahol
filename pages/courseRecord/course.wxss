@@ -1,0 +1,8 @@
+.course-record-page .media-box:before {
+	left: 0;
+}
+.course-record-page image {
+	width: 100rpx;
+	height: 100rpx;
+	transform: translateY(10rpx)
+}

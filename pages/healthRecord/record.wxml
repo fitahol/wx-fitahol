@@ -1,0 +1,14 @@
+<view class="page record-page">
+	<view class="page__bd">
+		<view class="cells cells_after-title">
+			<block wx:for="{{recordList}}" wx:for-item="record" wx:key="record_{{record.id}}">
+				<view class="cell">
+					<view class="cell__hd">日期:{{record.cdate}}</view>
+					<view class="cell__bd">{{record.current_desc}}</view>
+					<view class="cell__ft">
+						<button id="del-record" bindtap="delRecord" data-record="{{record.id}}" size="mini">删除</button>
+					</view>
+				</view>
+			</block>
+		</view>
+</view>

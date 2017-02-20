@@ -1,0 +1,16 @@
+<!-- 重复星期 -->
+<template name="repeatweekitem">
+	<view class="repeat-week-item">
+		<view class="{{enWeekCustomClass[index]}}" bindtap="chooseWeekRepeat" data-week="{{enWeekCustom[index]}}">{{weekItem}}</view>
+	</view>
+</template>
+
+<template name="repeatweek">
+	<view class="repeat-week-wrap" wx:if="{{ruleIndex === 5}}">
+		<view>
+			<block wx:for="{{chooseWeekInfo}}" wx:key="chooseWeekInfo_{{index}}" wx:for-item="weekItem">
+				<template is="repeatweekitem" data="{{weekItem, index, enWeekCustom, enWeekCustomClass}}"></template>
+			</block>
+		</view>
+	</view>
+</template>

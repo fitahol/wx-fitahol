@@ -1,0 +1,39 @@
+<!-- 课程记录（可编辑） -->
+<import src="courseItem/weight.wxml"/>
+<import src="courseItem/times.wxml"/>
+
+<template name="courseitem">
+	<view wx:if="{{!courseRecord.length}}" class="no-record">
+		您还没有相关记录！
+	</view>
+	<view wx:else class="action-list">
+		<scroll-view scroll-y="true" style="height: 930rpx;">
+			<block wx:for="{{courseRecord}}" wx:for-item="recordItem" wx:key="index">
+					<view class="action-list-item">
+						<view class="media-box__hd_in-appmsg action-name" data-content="{{recordItem.exercise.name}}">
+							<image
+								src="{{recordItem.exercise.icon_url}}"
+								alt="action name"
+								class="media-box__thumb" />
+						</view>
+						<view class="action-desc">
+							<template is="weight" data="{{recordItem, editorId, editorWeight}}"></template>
+							<template is="times" data="{{recordItem, editorId, editorTimes}}"></template>
+						</view>
+						<view class="action-btn" wx:if="{{editorId == recordItem.id}}">
+							<button class="btn mini-btn" type="default" size="mini" bindtap="cancelModify">取消</button>
+							<button class="btn mini-btn" type="primary" size="mini" bindtap="confirmModify">确认</button>
+						</view>
+						<image
+							src="../../images/icons/delete.png"
+							alt="delete"
+							class="delete-icon"
+							data-id="{{recordItem.id}}"
+							bindtap="deleteItemAction"
+							style="width: 50rpx;height:50rpx"
+						/>
+					</view>
+			</block>
+		</scroll-view>
+	</view>
+</template>

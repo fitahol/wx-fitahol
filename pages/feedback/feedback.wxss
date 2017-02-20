@@ -1,0 +1,15 @@
+/**index.wxss**/
+.profile-info-wrap {
+	border-top: 12rpx solid #edf0f5;
+	border-bottom: 12rpx solid #edf0f5;
+	padding-right: 20rpx;
+	line-height: 3.5em;
+}
+
+.profile-info-wrap .textarea {
+	line-height: 32rpx;
+	height: 100rpx;
+}
+.confirm-profile {
+	margin-top: 2em;
+}

@@ -1,0 +1,13 @@
+<view class="page">
+	<view class="page__bd">
+	 <view class="article">
+		<view class="article__h1">{{messageDetail.title}}</view>
+			<view class="article__section">
+					<view class="cell__ft article__h3">发送时间：{{messageDetail.show_time}}</view>
+					<view class="article__p">
+						{{messageDetail.description}}
+					</view>
+			</view>
+		</view>
+	</view>
+</view>

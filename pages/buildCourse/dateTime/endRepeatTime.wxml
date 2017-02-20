@@ -1,0 +1,18 @@
+	<!-- 课程开始时间-->
+	<template name="endRepeatTime">
+		<view class="form-preview" wx:if="{{ruleIndex}}">
+			<view class="form-preview__hd">
+				<view class="form-preview__item">
+					<view class="form-preview__label">结束重复日期</view>
+					<view class="form-preview__value">
+						<!-- <picker mode="time" value="{{endRepeatTime}}" start="06:00" end="23:00" bindchange="bindStartTimeChange" class="form-preview__label" style="float:right">
+							{{endRepeatTime}}
+						</picker> -->
+						<picker mode="date" value="{{endRepeatDate}}" start="2015-09-01" end="2018-01-01" bindchange="endRepeatDateChange" class="form-preview__label" style="float:right">
+							{{endRepeatDate || '选择重复日期'}}
+						</picker>
+					</view>
+				</view>
+			</view>
+		</view>
+	</template>

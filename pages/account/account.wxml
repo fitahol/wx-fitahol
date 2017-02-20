@@ -1,0 +1,48 @@
+
+<view class="page account-container gray-page">
+		<navigator url="/pages/profile/profile" class="user-avatar-wrap media-box media-box_appmsg" hover-class="cell_active">
+			<image class="user-avatar" src="{{profile.portrait}}" background-size="cover" style="width: 128rpx;height: 128rpx;"></image>
+			<view class="media-box__bd media-box__bd_in-appmsg">
+					<view class="media-box__title">ID: {{profile.user.id}}</view>
+					<view class="media-box__title">昵称: {{profile.nickname || '暂无'}}</view>
+			</view>
+		</navigator>
+		<view class="account-list">
+				<navigator url="/pages/message/message" class="cell cell_access account-item" hover-class="cell_active">
+						<view class="cell__hd"><image src="../../images/icons/email.png" style="width: 20px;height: 20px;margin: 5px" /></view>
+						<view class="cell__bd cell_primary unread">
+								<view>我的消息</view>
+								<text class="unread-mark" wx:if="{{profile.unread_num}}"></text>
+						</view>
+						<view class="cell__ft cell__ft_in-access"></view>
+				</navigator>
+				<navigator url="/pages/courseCharts/chart" class="cell cell_access account-item" hover-class="cell_active">
+						<view class="cell__hd"><image src="../../images/icons/pie-chart.png" style="width: 20px;height: 20px;margin: 5px" /></view>
+						<view class="cell__bd cell_primary">
+								<view>课程统计</view>
+						</view>
+						<view class="cell__ft cell__ft_in-access"></view>
+				</navigator>
+				<navigator url="/pages/phoneBind/bind" class="cell cell_access account-item" hover-class="cell_active">
+						<view class="cell__hd"><image src="../../images/icons/smartphone.png" style="width: 20px;height: 20px;margin: 5px" /></view>
+						<view class="cell__bd cell_primary">
+								<view>手机绑定</view>
+						</view>
+						<view class="cell__ft cell__ft_in-access"></view>
+				</navigator>
+				<navigator url="/pages/feedback/feedback" class="cell cell_access account-item" hover-class="cell_active">
+						<view class="cell__hd"><image src="../../images/icons/feedback.png" style="width: 20px;height: 20px;margin: 5px" /></view>
+						<view class="cell__bd cell_primary">
+								<view>用户反馈</view>
+						</view>
+						<view class="cell__ft cell__ft_in-access"></view>
+				</navigator>
+				<navigator url="/pages/about/intro" class="cell cell_access account-item" hover-class="cell_active">
+						<view class="cell__hd"><image src="../../images/icons/idea.png" style="width: 20px;height: 20px;margin: 5px" /></view>
+						<view class="cell__bd cell_primary">
+								<view>关于Fitahol</view>
+						</view>
+						<view class="cell__ft cell__ft_in-access"></view>
+				</navigator>
+		</view>
+</view>

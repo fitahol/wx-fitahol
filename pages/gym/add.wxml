@@ -1,0 +1,74 @@
+<view class="page">
+		<view class="page__bd">
+			<form bindsubmit="formSubmit">
+				<view class="profile-info-wrap">
+					<view class="cell cell_input">
+						<view class="cell__hd">
+								<view class="label">健身房名称</view>
+						</view>
+						<view class="cell__bd">
+								<input class="input" name="name" placeholder="请输入健身房名称"/>
+						</view>
+					</view>
+					<view class="cell cell_select">
+							<view class="cell__hd cell__hd_in-select-after">
+									<view class="label">联系电话</view>
+							</view>
+							<view class="cell__bd">
+								<input class="input" name="telephone" placeholder="请输入电话；多个以 , 间隔"/>
+							</view>
+					</view>
+					<!--  健身房所在地 -->
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">省/(市)</view>
+						</view>
+						<view class="cell__bd flex">
+							<picker mode="selector" name="province" bindchange="changeProvince" value="{{provinceList[provinceIndex]}}" range="{{provinceList}}" class="flex__item">
+								<view class="slide-select">{{provinceList[provinceIndex]}}</view>
+							</picker>
+						</view>
+					</view>
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">市</view>
+						</view>
+						<view class="cell__bd flex">
+							<picker mode="selector" name="city" bindchange="changeCity" value="{{cityList[cityIndex]}}" range="{{cityList}}" class="flex__item">
+								<view class="slide-select">{{cityList[cityIndex]}}</view>
+							</picker>
+						</view>
+					</view>
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">区</view>
+						</view>
+						<view class="cell__bd flex">
+							<picker mode="selector" name="district" bindchange="changeDistrict" value="{{districtList[districtIndex]}}" range="{{districtList}}" class="flex__item">
+								<view class="slide-select">{{districtList[districtIndex]}}</view>
+							</picker>
+						</view>
+					</view>
+					<!-- 详细地址 -->
+					<view class="cell cell_select">
+							<view class="cell__hd cell__hd_in-select-after">
+									<view class="label">详细地址</view>
+							</view>
+							<view class="cell__bd">
+								<input class="input" name="address" placeholder="请输入详细地址，具体到门牌号"/>
+							</view>
+					</view>
+				</view>
+				<view class="btn-area confirm-profile">
+						<button formType="submit" type="primary">创建</button>
+				</view>
+			</form>
+		</view>
+</view>
+
+<!-- 擅长 -->
+<template name="primaryfield">
+	<view class="primary-field-item">
+		 <text>{{feildItem}}</text>
+	</view>
+</template>

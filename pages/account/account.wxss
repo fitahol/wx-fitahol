@@ -1,0 +1,23 @@
+/**index.wxss**/
+.account-container {
+	font-size: 28rpx;
+	padding-top: 1rpx;
+}
+.user-avatar-wrap {
+	background: #fff;
+	margin: 24rpx 0;
+}
+.user-avatar-wrap view {
+	font-size: 28rpx;
+}
+.user-avatar {
+	width: 128rpx;
+	height: 128rpx;
+	margin-right: 40rpx;
+}
+.account-list {
+	background: #fff;
+}
+.account-item {
+	margin-right: 30rpx;
+}

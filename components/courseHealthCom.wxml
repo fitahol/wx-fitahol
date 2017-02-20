@@ -1,0 +1,24 @@
+<template name="coursehealthcom">
+		<navigator url="{{lastInfo.healthURL}}" class="cell cell_access" hover-class="cell_active" >
+			<image src="{{lastInfo.id ? lastInfo.user.portrait : '../../images/icons/connection-indicator-black.png'}}" style="width: 40rpx;height: 40rpx;margin-right: 20rpx" />
+			<view class="cell__bd cell_primary" wx:if="{{lastInfo.id}}">
+				最近状态：{{lastInfo.goal_record.cdate}}{{lastInfo.name}}{{lastInfo.goal_record.current_desc}}
+			</view>
+			<view wx:else class="cell__bd cell_primary">
+				暂无健身记录，去添加
+			</view>
+			<view class="cell__ft cell__ft_in-access"></view>
+		</navigator>
+</template>
+<template name="health">
+		<navigator url="{{eventURL}}" class="cell cell_access white-area" hover-class="cell_active" >
+			<image src="{{lastCourseInfo.id ? lastCourseInfo.user.portrait : '../../images/icons/connection-indicator-black.png'}}" style="width: 40rpx;height: 40rpx;margin-right: 20rpx" />
+			<view class="cell__bd cell_primary" wx:if="{{lastCourseInfo.id}}">
+				最近课程： {{lastCourseInfo.start}}
+			</view>
+			<view wx:else class="cell__bd cell_primary">
+				暂无新课程，查看历史
+			</view>
+			<view class="cell__ft cell__ft_in-access"></view>
+		</navigator>
+</template>

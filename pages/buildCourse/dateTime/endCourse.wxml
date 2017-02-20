@@ -1,0 +1,18 @@
+	<!-- 课程结束时间-->
+	<template name="endcourse">
+		<view class="form-preview">
+			<view class="form-preview__hd">
+				<view class="form-preview__item">
+					<view class="form-preview__label">结束</view>
+					<view class="form-preview__value">
+						<picker mode="time" value="{{endTime}}" start="06:00" end="23:00" bindchange="bindEndTimeChange" class="form-preview__label" style="float:right">
+							{{endTime}}
+						</picker>
+						<picker mode="date" value="{{endDate}}" start="2015-09-01" end="2018-01-01" bindchange="bindEndDateChange" class="form-preview__label" style="float:right">
+							{{endDate}}
+						</picker>
+					</view>
+				</view>
+			</view>
+		</view>
+	</template>

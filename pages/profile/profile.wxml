@@ -1,0 +1,105 @@
+<view class="page">
+		<view class="page__bd">
+			<view class="userinfo">
+				<image class="userinfo-avatar" src="{{profile.portrait}}" background-size="cover"></image>
+			</view>
+			<form bindsubmit="formSubmit">
+				<view class="profile-info-wrap">
+					<view class="cell cell_input">
+						<view class="cell__hd">
+								<view class="label">账号</view>
+						</view>
+						<view class="cell__bd">
+							 {{profile.user.id}}
+						</view>
+					</view>
+					<view class="cell cell_input">
+						<view class="cell__hd">
+								<view class="label">昵称</view>
+						</view>
+						<view class="cell__bd">
+								<input class="input" name="nickname" value="{{profile.nickname}}" placeholder="请输入姓名"/>
+						</view>
+					</view>
+					<view class="cell cell_select">
+							<view class="cell__hd cell__hd_in-select-after">
+									<view class="label">性别</view>
+							</view>
+							<view class="cell__bd">
+								<picker mode="selector" name="gender" bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genders}}">
+									<view class="select select_in-select-after">{{genders[genderIndex] || ''}}</view>
+								</picker>
+							</view>
+					</view>
+
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">签名</view>
+						</view>
+						<view class="cell__bd">
+								<textarea name="intro" value="{{profile.intro}}" class="textCenter textarea" placeholder="请输入文本" />
+								<!-- <view class="textarea-counter">0/200</view> -->
+						</view>
+					</view>
+					<!--  健身房所在地 -->
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">省市区</view>
+						</view>
+						<view class="cell__bd flex">
+							<picker mode="selector" name="province" bindchange="changeProvince" value="{{provinceList[provinceIndex]}}" range="{{provinceList}}" class="flex__item">
+								<view class="slide-select">{{provinceList[provinceIndex]}}</view>
+							</picker>
+							<picker mode="selector" name="city" bindchange="changeCity" value="{{cityList[cityIndex]}}" range="{{cityList}}" class="flex__item">
+								<view class="slide-select">{{cityList[cityIndex]}}</view>
+							</picker>
+							<picker mode="selector" name="district" bindchange="changeDistrict" value="{{districtList[districtIndex]}}" range="{{districtList}}" class="flex__item">
+								<view class="slide-select">{{districtList[districtIndex]}}</view>
+							</picker>
+						</view>
+					</view>
+					<!-- 健身房 -->
+					<view class="cell gym-wrap">
+						<view class="cell__hd">
+							<view class="label">健身房</view>
+						</view>
+						<view class="cell__bd">
+							<picker wx:if="{{gymList.length}}" mode="selector" name="gym" bindchange="changeGym" value="{{gymList[gymIndex]}}" range="{{gymList}}" class="flex__item">
+								<view class="slide-select">{{gymList[gymIndex] || '暂未添加'}}</view>
+							</picker>
+							<view wx:else>所选区域暂未添加健身房</view>
+						</view>
+						<navigator url="/pages/gym/add" class="gym-unfind">没找到您的健身房？去添加 </navigator>
+					</view>
+
+					<!-- 擅长领域 -->
+					<view class="cell">
+						<view class="cell__hd">
+							<view class="label">擅长领域</view>
+						</view>
+						<view class="cell__bd">
+							<view class="primary-field">
+								<block wx:for="{{primaryField}}" wx:for-item="feildItem" wx:key="primaryfield_{{index}}">
+									<template is="primaryfield" data="{{feildItem, index}}"></template>
+								</block>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="btn-area confirm-profile">
+						<button formType="submit" type="primary">确定</button>
+				</view>
+			</form>
+		</view>
+</view>
+
+<!-- 擅长 -->
+<template name="primaryfield">
+	<view class="primary-field-item">
+		<text
+			class="{{feildItem.choose ? 'active' : ''}}"
+			data-id="{{feildItem.id}}"
+			data-index="{{index}}"
+			bindtap="changeFeild">{{feildItem.name}}</text>
+	</view>
+</template>

@@ -1,0 +1,27 @@
+<view class="page">
+	<view class="page__bd">
+		<!-- bar -->
+		<canvas style="width: 100%; height: 220px; margin-top:-40px" canvas-id="report_data"></canvas>
+		<view class="flex week-month-course">
+			<view class="flex__item course-week">
+				<text>本周</text>
+				<view>{{chartData.week_count}}节</view>
+				<!-- <text>{{chartData.weekday_report[6].cdate}}至{{chartData.weekday_report[0].cdate}}</text> -->
+			</view>
+			<view class="flex__item course-month">
+				<text>本月</text>
+				<view>{{chartData.month_count}}节</view>
+			</view>
+		</view>
+		<!-- ring -->
+		<view class="course-data-wrap">
+			<canvas style="width: 100%; height: 220px; margin-top:-40px" canvas-id="course_data"></canvas>
+			<view class="course-data-info course-week-info">
+				学员课程总数: {{chartData.event_total}}
+			</view>
+			<view class="course-data-info course-month-info">
+				学员剩余课程: {{chartData.event_remain}}
+			</view>
+		</view>
+	</view>
+</view>

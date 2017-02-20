@@ -1,0 +1,34 @@
+<template name="search">
+	<view class="search-bar">
+		<view class="search-bar__form">
+			<view class="search-bar__box">
+					<icon class="icon-search_in-box" type="search" size="14"></icon>
+					<input
+						type="text"
+						name="query"
+						class="search-bar__input"
+						placeholder="搜索学员"
+						value="{{searchResult}}"
+						focus="{{searchShowed}}"
+						bindinput="searchTyping"
+						bindfocus="searchFocus"
+					/>
+					<view class="icon-clear" wx:if="{{searchResultList.length > 0}}" bindtap="clearSearch">
+							<icon type="clear" size="14"></icon>
+					</view>
+			</view>
+			<label class="search-bar__label" hidden="{{searchShowed}}" bindtap="showSearch">
+					<icon class="icon-search" type="search" size="14"></icon>
+					<view class="search-bar__text">搜索学员</view>
+			</label>
+		</view>
+		<!-- <button class="search-bar__cancel-btn mini-btn" hidden="{{!searchShowed}}" size="mini" formType="submit" type="default">提交</button> -->
+	</view>
+	<view class="select-list select-list-left" wx:if="{{searchResultList.length}}">
+		<block wx:for="{{searchResultList}}" wx:for-item="item" wx:key="search_index">
+			<view  class="{{searchResult == item.searchItem ? 'active-item' : ''}}" hover-class="cell_active" bindtap="handleSearchItem" data-search="{{item.searchItem}}" data-id="{{item.user_id}}">
+					{{item.searchItem}}
+			</view>
+		</block>
+	</view>
+</template>

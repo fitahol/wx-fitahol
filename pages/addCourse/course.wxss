@@ -1,0 +1,19 @@
+.add-course-desc {
+	line-height: 3em;
+	padding-left: 30rpx;
+	border-bottom: 6rpx solid #edf0f5;
+}
+.add-course-wrap {
+	padding: 60rpx 30rpx;
+}
+.add-course-wrap view{
+	padding-top: 20rpx;
+}
+.add-course-wrap input{
+	border: 1px solid #edf0f5;
+	line-height: 60rpx;
+	height: 60rpx;
+	margin: 0 1em 0 2em;
+	padding: 16rpx 0;
+	text-align: center;
+}

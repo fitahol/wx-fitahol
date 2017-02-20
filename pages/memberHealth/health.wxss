@@ -1,0 +1,128 @@
+.imgCenter {
+	height:25px;
+	line-height:15px;
+}
+.member-health-wrap {
+	/*height: 100%;*/
+}
+.editText {
+	margin-left: -7px;
+	margin-top: -5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #999999;
+	font-size: 14px;
+}
+
+.canvasCenter {
+	text-align: center;
+	padding: 50rpx;
+}
+.no-goal {
+	padding: 1em 6rpx 1em .5em;
+}
+.add-fitgol-btn{
+	margin: 80rpx 0 40rpx;
+	text-align: center;
+}
+
+.member-health-wrap .cell:before {
+	left: 0;
+}
+.member-health-wrap .media-box:before {
+	left: 0;
+}
+
+/*figure-wrap*/
+.figure-wrap {
+	padding: 0 12rpx;
+	text-align: center;
+}
+.body-wrap {
+	padding: 0 12rpx;
+}
+.body-wrap .cell {
+	padding-right: 0;
+	padding-left: 20rpx;
+}
+
+.figure-list {
+	padding: 16rpx 0 16rpx 16rpx;
+}
+.figure-item {
+	padding-right: 16rpx;
+	position: relative;
+}
+/*.figure-item .clear-icon {
+	position: absolute;
+	right: 0;
+	top: -10rpx;
+	background: #fff;
+	overflow: hidden;
+	border-radius: 50%;
+}*/
+.area-title {
+	position: relative;
+	padding: .6em 0;
+	text-align: center;
+	background: #edf0f5;
+}
+.area-title:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	border-left: 0;
+	border-bottom: 2rpx dashed #C8C8CD;
+	width: 100%;
+	height: 0;
+	left: -10rpx;
+	transform: translate(0,-1.4em);
+}
+.area-title text {
+	padding: 0 1.6em;
+	position: relative;
+	background: #edf0f5;
+}
+.area-body-title text:before, .area-body-title text:after {
+	content: '';
+	position: absolute;
+	bottom: 50%;
+	display: block;
+	width: 10rpx;
+	height: 10rpx;
+	border-radius: 50%;
+	border: 1px solid #C8C8CD;
+	transform: translate(0,50%);
+}
+.area-figure-title text:before, .area-figure-title text:after {
+	content: '';
+	position: absolute;
+	bottom: 50%;
+	display: block;
+	width: 12rpx;
+	height: 12rpx;
+	border-style: solid;
+	border-color: #fb5340;
+	transform: translate(0, 50%) rotate(-45deg);
+}
+.area-figure-title text:before {
+	border-width: 6rpx 0 0 6rpx;
+}
+.area-figure-title text:after {
+	border-width: 0 6rpx 6rpx 0;
+}
+.area-title text:before{
+	left: 8rpx;
+}
+.area-title text:after{
+	right: 8rpx;
+}
+.add-figure-btn {
+	position: absolute;
+	right: -.2em;
+	top: -.8em;
+}
+.figure-list button {
+	margin-right: 2.16em;
+}

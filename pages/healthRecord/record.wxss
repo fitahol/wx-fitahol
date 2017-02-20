@@ -1,0 +1,7 @@
+.record-page view{
+	font-size: 28rpx;
+	text-align: center;
+}
+.record-page .cell:before {
+	left: 0;
+}

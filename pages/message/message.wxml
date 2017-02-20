@@ -1,0 +1,13 @@
+	<view class="panel__bd message-wrap">
+		<block wx:for="{{messageList.results}}" wx:for-item="message" wx:key="message_{{message.id}}">
+			<navigator url="/pages/messageDetail/detail?message_id={{message.id}}" class="media-box media-box_text" hover-class="cell_active">
+						<view class="media-box__title media-box__title_in-text unread">
+							{{message.title}}
+							<text class="message-unread" wx:if="{{message.unread}}">未读</text>
+						</view>
+						<view class="media-box__info">
+							发送时间：{{message.show_time}}
+						</view>
+			</navigator>
+		</block>
+	</view>

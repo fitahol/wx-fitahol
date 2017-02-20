@@ -1,0 +1,31 @@
+<import src="../../components/search.wxml" />
+<import src="dateTime/startCourse.wxml" />
+<import src="dateTime/endCourse.wxml" />
+<import src="repeat/repeatRule.wxml" />
+<import src="repeat/repeatTimes.wxml" />
+<import src="dateTime/endRepeatTime.wxml" />
+<import src="repeat/repeatWeek.wxml" />
+
+<view class="build-course-page">
+	<!-- 搜索 -->
+	<template
+		is="search"
+		data="{{searchResult, searchShowed, searchResultList}}"
+	>
+	</template>
+	<!-- 新建课程 -->
+	<template is="build" data="{{startDate, startTime, endDate, endTime, ruleInfo, ruleResult, hasClickRepeatRule, ruleIndex, ruleIndex, enWeekCustom, chooseWeekInfo, chooseWeekIndex, enWeekCustomClass, endRepeatDate, endRepeatTime, ruleIndex,repeatTimes}}"></template>
+</view>
+
+<template name="build">
+	<template is="startcourse" data="{{startDate, startTime}}"></template>
+	<template is="endcourse" data="{{endDate, endTime}}"></template>
+	<template is="repeatrule" data="{{ruleInfo, ruleResult, hasClickRepeatRule, ruleIndex}}"></template>
+	<template is="repeatweek" data="{{ruleIndex, enWeekCustom, chooseWeekInfo, chooseWeekIndex, enWeekCustomClass}}"></template>
+	<template is="endRepeatTime" data="{{endRepeatDate, endRepeatTime, ruleIndex}}"></template>
+	<template is="repeattimes" data="{{repeatTimes, ruleIndex}}"></template>
+	<textarea bindblur="handleCourseDesc"/>
+	<view class="block-btn-wrap">
+		<button class="btn" type="primary" bindtap="buildCourseConfirm">确认</button>
+	</view>
+</template>

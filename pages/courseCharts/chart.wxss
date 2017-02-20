@@ -1,0 +1,39 @@
+.week-month-course {
+	text-align: center;
+	color: #fff;
+	padding-bottom: 2em;
+}
+.course-week {
+	background: #76c639;
+}
+.course-month {
+	background: #00BCD4;
+}
+.course-data-wrap {
+	position: relative;
+}
+.course-data-info {
+	position: absolute;
+	left: 60%;
+}
+.course-week-info {
+	top: 4.5em;
+}
+.course-month-info {
+	top: 7em;
+}
+.course-data-info:before {
+	content: ' ';
+	position: absolute;
+	left: -36rpx;
+	top: 12rpx;
+	width: 18rpx;
+	height: 18rpx;
+	border-radius: 50%;
+}
+.course-week-info:before {
+	background: #7158ec;
+}
+.course-month-info:before {
+	background: #fec312;
+}

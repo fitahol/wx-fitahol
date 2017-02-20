@@ -1,0 +1,70 @@
+<!--logs.wxml-->
+<import src="../../components/courseHealthCom.wxml" />
+
+<view class="page member-health-wrap gray-area">
+	<view class="page__bd">
+		<!-- 最近课程 -->
+		<template is="health" data="{{eventURL, lastCourseInfo}}"></template>
+		<!-- 照片墙 -->
+		<view class="figure-wrap">
+			<view class="area-title area-body-title">
+				<text>最近晒图</text>
+				<button class="btn mini-btn add-figure-btn" type="default" size="mini" wx:if="{{lastFigure.results.length}}" bindtap="enterTakeFigure">添加晒图</button>
+			</view>
+			<navigator
+				wx:if="{{lastFigure.results.length}}"
+				class="flex figure-list white-area"
+				url="/pages/figureDetail/figureDetail?user_id={{userID}}">
+				<block wx:for="{{lastFigure.results}}" wx:for-item="item" wx:key="lastFigure_{{index}}">
+					<view class="flex__item figure-item">
+						<image src="{{item.figure}}" style="width:100%;height:300rpx"></image>
+						<!-- <text>{{item.desc}}</text> -->
+						<text>{{item.cdate}}</text>
+						<!-- <icon type="clear" size="16" class="clear-icon"></icon> -->
+					</view>
+				</block>
+			</navigator>
+			<navigator
+				wx:else
+				class="flex white-area no-goal"
+				url="/pages/figureDetail/figureDetail?user_id={{userID}}">
+				暂无晒图记录
+				<button class="btn mini-btn" type="primary" size="mini">添加晒图</button>
+			</navigator>
+		</view>
+		<!-- 身体曲线 -->
+		<view class="body-wrap">
+			<view class="area-title area-body-title">
+				<text>身体记录</text>
+			</view>
+			<view class="media-box media-box_small-appmsg white-area" wx:if="{{fitGoal.length}}">
+				<block wx:for="{{fitGoal}}" wx:for-item="goal" wx:key="goal_{{goal.id}}">
+					<view class="cell">
+						<navigator url="/pages/fitGoal/fitGoal?user_id={{goal.user.user_id}}&fit_goal_id={{goal.id}}" class="cell__hd">
+							<image src="../../images/icons/pencil.png" style="margin-right: 5px;width:20px;height:20px;"></image>
+						</navigator>
+						<navigator url="/pages/fitGoal/fitGoal?user_id={{goal.user.user_id}}&fit_goal_id={{goal.id}}" class="cell__bd editText">{{goal.name}}: {{goal.goal}} {{goal.measure}}</navigator>
+						<view class="cell__ft"><button class="search-bar__cancel-btn mini-btn" size="mini" data-goal="{{goal.id}}" bindtap="addNewRecord" type="default">添加记录</button></view>
+					</view>
+					<navigator
+						wx:if="{{goal.goal_record.length}}"
+						url="/pages/healthRecord/record?user_id={{goal.user.user_id}}&fit_goal_id={{goal.id}}"
+						class="cell cell_access canvasBar" hover-class="cell_active">
+						<canvas style="width: 100%; height: 220px; margin-top:-40px" canvas-id='healthChart_{{goal.id}}'></canvas>
+					</navigator>
+					<view wx:else class="canvasCenter">暂无数据</view>
+				</block>
+			</view>
+			<navigator
+				wx:else
+				class="flex white-area no-goal"
+				url="/pages/fitGoal/fitGoal?user_id={{userID}}">
+				暂无健身记录
+				<button class="btn mini-btn" type="primary" size="mini">添加记录</button>
+			</navigator>
+		</view>
+		<view class="add-fitgol-btn">
+			<button bindtap="bindAddTap" class="btn" plain="true" size="mini" type="default"> + 添加健身新目标</button>
+		</view>
+	</view>
+</view>

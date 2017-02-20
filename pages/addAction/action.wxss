@@ -1,0 +1,93 @@
+.add-action-container {
+	/*background: #fff;*/
+}
+.category-list {
+	width: 30%;
+	border-right: 1px solid #edf0f5;
+}
+.category-item {
+	position: relative;
+	padding: 10rpx;
+	line-height: 100%;
+}
+.category-item image{
+	width: 80rpx;
+	height: 80rpx;
+}
+.category-item text {
+	line-height: 100%;
+	display: inline-block;
+}
+/* 子列表*/
+.category-sub-list {
+	flex: 1;
+	position: relative;
+}
+.category-sub-item {
+	position: relative;
+	padding: 10rpx;
+	padding-left: 50rpx;
+	z-index: 1;
+}
+.category-sub-item image {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+	background: #edf0f5;
+}
+.category-desc {
+	margin-left: 1em;
+}
+.descInfo {
+	height: 600rpx;
+	text-align: left;
+}
+/*drawer*/
+.drawer-wrap {
+	position: absolute;
+	right: -100%;
+	top: 0;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	text-align: center;
+}
+.drawer-wrap image {
+	width: 8em;
+	height: 8em;
+	margin: 1em auto 0;
+	display: block;
+}
+.drawer-container-input {
+	margin: 1em;
+}
+.drawer-container-input input {
+	display: inline-block;
+	border: 1px solid #edf0f5;
+	margin: 0 1em;
+	flex: 1;
+}
+.add-action {
+	margin: 2em 3em;
+}
+.add-action  button {
+	line-height: 2em;
+	height: 2em;
+}
+.category-sub-item .add-icon {
+	position: absolute;
+	right: 18rpx;
+	top: 25rpx;
+	bottom: 0;
+	width: 50rpx;
+	height: 50rpx;
+}
+.category-sub-item .first-letter {
+	position: absolute;
+	left: 18rpx;
+	top: 25rpx;
+	bottom: 0;
+	width: 50rpx;
+	height: 50rpx;
+}

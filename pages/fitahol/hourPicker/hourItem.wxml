@@ -1,0 +1,73 @@
+<!-- state值 :
+1. 完结 checked
+2. 预约 alarm/ notification
+0. 待上课  play
+-1. 休息 失效课程 disabled
+绿 ：上课，橙： 预约，灰：结束 紫： 休息〜
+ -->
+ <template name="renderitem">
+	 <view
+		 wx:if="{{item.hasSameYmd && renderItem.HOUR == hourItemTitleInfo && renderItem.MINU == 00}}"
+		 class="random-info-show{{((index + hourItemTitleInfo) % 5)}} hour-space-item mark-icon{{renderItem.state + 1}} is-{{renderItem.calendar_slug}}">
+		 <image src="{{renderItem.user.portrait}}" style="width:30px; height: 30px;" wx:if="{{renderItem.calendar_slug !== 'rest'}}"></image>
+		 <text>{{renderItem.user.nickname || renderItem.user.user_id}}</text>
+		 <view class="mark-icon-info" wx:if="{{renderItem.state === -1 }}">休息</view>
+		 <view class="mark-icon-info" wx:elif="{{renderItem.state === 0 }}">上课</view>
+		 <view class="mark-icon-info" wx:elif="{{renderItem.state === 1}}">结课</view>
+		 <view class="mark-icon-info" wx:elif="{{renderItem.state === 2}}">预约</view>
+		 <form
+			 bindsubmit="enterCourse"
+			 report-submit="true"
+			 data-id="{{renderItem.id}}"
+			 data-state="{{renderItem.state}}"
+			 data-user="{{renderItem.user.user_id}}"
+			 data-start="{{renderItem.start}}"
+			 data-end="{{renderItem.end}}"
+		 >
+			 <button formType="submit" class="cover"></button>
+		 </form>
+	 </view>
+	 <view wx:elif="{{item.hasSameYmd && renderItem.HOUR == hourItemTitleInfo && renderItem.MINU == 30}}" class="half-wrap time-{{item.times > nowDateInfo.times || item.times == nowDateInfo.times && hourItemTitleInfo >= nowDateInfo.hour}} half">
+		 <view
+			 class="random-info-show{{((index + hourItemTitleInfo) % 5)}} hour-space-item random-info-show-half  mark-icon{{renderItem.state + 1}}  is-{{renderItem.calendar_slug}}">
+			 <image src="{{renderItem.user.portrait}}" style="width:30px; height: 30px;" wx:if="{{renderItem.calendar_slug !== 'rest'}}"></image>
+			 <text>{{renderItem.user.nickname || renderItem.user.user_id}}</text>
+			 <view class="mark-icon-info" wx:if="{{renderItem.state === -1 }}">休息</view>
+			 <view class="mark-icon-info" wx:elif="{{renderItem.state === 0 }}">上课</view>
+			 <view class="mark-icon-info" wx:elif="{{renderItem.state === 1}}">结课</view>
+			 <view class="mark-icon-info" wx:elif="{{renderItem.state === 2}}">预约</view>
+			 <form
+				 bindsubmit="enterCourse"
+				 report-submit="true"
+				 data-id="{{renderItem.id}}"
+				 data-state="{{renderItem.state}}"
+				 data-user="{{renderItem.user.user_id}}"
+				 data-start="{{renderItem.start}}"
+				 data-end="{{renderItem.end}}"
+				 >
+				 <button formType="submit" class="cover"></button>
+			 </form>
+		 </view>
+	 </view>
+	 <navigator
+		 wx:elif="{{item.year == tapItem.year && item.month == tapItem.month && item.day == tapItem.day && hourItemTitleInfo == tapItem.hour && hourItemTitleInfo !== renderItem.HOUR}}"
+		 url="/pages/buildCourse/buildCourse"
+		 class="hour-space-item hour-active-item"
+	 >
+		 +
+	 </navigator>
+	 <view wx:else
+		 class="hour-space-item time-{{item.times > nowDateInfo.times || item.times == nowDateInfo.times && hourItemTitleInfo >= nowDateInfo.hour}}"
+		 bindtap="handleTapItem"
+		 data-year="{{item.year}}"
+		 data-month="{{item.month}}"
+		 data-day="{{item.day}}"
+		 data-hour="{{hourItemTitleInfo}}">
+	 </view>
+ </template>
+
+<template name="hourItem">
+	<block wx:for="{{weekTitleInfo}}" wx:key="weekTitle_{{item.renderData[hourItemTitleInfo].id}}">
+		<template is="renderitem" data="{{renderItem: item.renderData[hourItemTitleInfo], item, index, hourItemTitleInfo, tapItem, nowDateInfo}}" />
+	</block>
+</template>

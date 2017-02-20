@@ -1,0 +1,22 @@
+.add-fitgoal-container {
+	font-size: 28rpx;
+	padding-right: 30rpx;
+}
+.remark {
+	margin-bottom: 3em;
+}
+.add-fitgoal-container .remark:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 1px;
+	border-top: 1rpx solid #D9D9D9;
+	color: #D9D9D9;
+	left: 30rpx;
+}
+.add-fitgoal-container .textarea {
+	height: 6em;
+	padding-left: 28rpx;
+}

@@ -1,0 +1,17 @@
+<template name="times">
+	<view class="action-desc-item action-desc-time">
+		<text class="action-desc-first">次数</text>
+		<view class="action-desc-second">
+			<text bindtap="reduceTimes" data-id="{{recordItem.id}}" data-weight="{{recordItem.value}}" data-times="{{recordItem.number}}">-</text>
+			<input
+				type="number"
+				value="{{editorId == recordItem.id ? editorTimes : recordItem.number}}"
+				maxlength="3"
+				data-id="{{recordItem.id}}"
+				data-weight="{{recordItem.value}}"
+				bindinput="handleTimesChange"
+			/>
+			<text bindtap="addTimes" data-id="{{recordItem.id}}" data-weight="{{recordItem.value}}" data-times="{{recordItem.number}}">+</text>
+		</view>
+	</view>
+</template>

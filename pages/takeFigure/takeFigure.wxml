@@ -1,0 +1,30 @@
+<view class="take-figure-wrap">
+		<form bindsubmit="formSubmit">
+			<view class="figure-wrap">
+				<view class="cell">
+					<view class="label">记录日期</view>
+					<picker class="input flex__item slide-select" name="cdate" mode="date" value="{{cdate}}" start="2016-09-01" end="2018-01-01" bindchange="changeCdate">
+						<view class="picker input">
+							{{cdate}}
+						</view>
+					</picker>
+				</view>
+				<view class="cell uploader-wrap">
+					<view class="label">上传图片</view>
+					<view class="flex__item choose-upload" bindtap="chooseImage">
+						<image src="{{fileSrc}}" class="uploader__img" wx:if="{{fileSrc}}"></image>
+						<view class="uploader__input-box" wx:else>
+							<view class="r__input"></view>
+						</view>
+					</view>
+				</view>
+				<view class="cell">
+					<view class="label">图片标签</view>
+					<input type="text" name="desc" class="textCenter flex__item" />
+				</view>
+			</view>
+			<view class="btn-area">
+					<button formType="submit" type="primary">确定</button>
+			</view>
+		</form>
+</view>

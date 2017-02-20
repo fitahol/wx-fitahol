@@ -1,0 +1,31 @@
+<navigator class="to-takefigure" url="/pages/takeFigure/takeFigure?user_id={{userID}}&pagename=figureDetail">
+	<button class="btn mini-btn" type="default" size="mini">添加晒图</button>
+</navigator>
+
+<scroll-view
+	wx:if="{{figureDetail.results.length}}"
+	scroll-y="true"
+	style="height: 110%;"
+	class="page figure-detail-wrap"
+	upper-threshold="100"
+	lower-threshold="100"
+	bindscrolltoupper="upper"
+	bindscrolltolower="lower">
+	<block wx:for="{{figureDetail.results}}" wx:key="figureDetail_{{index}}">
+		<view class="figure-detail-item white-area">
+			<image src="{{item.figure}}"></image>
+			<text>日期：{{item.cdate}}</text>
+			<text class="figure-desc">标签： {{item.desc || '无'}}</text>
+			<image
+				src="../../images/icons/delete.png"
+				alt="delete"
+				class="delete-icon"
+				data-id="{{item.id}}"
+				bindtap="deleteFigure"
+				style="width: 36rpx;height:36rpx"
+			/>
+		</view>
+	</block>
+</scroll-view>
+
+<view wx:else class="no-record">暂无照片记录</view>

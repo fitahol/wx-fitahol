@@ -1,0 +1,52 @@
+.log-list {
+	display: flex;
+	flex-direction: column;
+	padding: 40rpx;
+}
+
+.log-item {
+	margin: 10rpx;
+}
+
+.member-avatar {
+	width: 80rpx;
+	height: 80rpx;
+	margin: -5rpx 10rpx;
+	border-radius: 50%;
+}
+
+.searchItem{
+	padding-bottom: 9px;
+}
+/*.add-member-result {
+}*/
+.add-btn {
+	margin: .6em 2em;
+	line-height: 2.6em;
+	font-size: 28rpx;
+}
+.add-member-avator {
+	margin-right: 1em;
+}
+.add-member-serachinfo {
+	padding-top: .5em;
+}
+.add-member-result view{
+	font-size: 26rpx;
+	line-height: 2.4em;
+}
+ .add-member-list {
+	 border-bottom: 4rpx solid #edf0f5;
+	 position: relative;
+ }
+.add-memver-btnwrap {
+	position: absolute;
+	right: 1em;
+	top: 40%;
+	padding-bottom: 1em;
+}
+.add-memver-btnwrap button{
+	font-size: 26rpx;
+	line-height: 2.4em;
+	margin-left: 1em;
+}

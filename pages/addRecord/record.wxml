@@ -1,0 +1,29 @@
+<view class="">
+		<form bindsubmit="formSubmit">
+			<view class="form-wrap">
+				<view class="cell">
+					<view class="label">目标名称</view>
+					<input class="input flex__item" name="name" placeholder="{{fitGoal.name || '请输入目标名称'}}"/>
+				</view>
+				<view class="cell">
+					<view class="label">目标单位</view>
+					<input class="input flex__item" name="measure" placeholder="{{fitGoal.measure || '单位：例如KG'}}"/>
+				</view>
+				<view class="cell">
+					<view class="label">记录日期</view>
+					<picker class="input flex__item" name="cdate" mode="date" value="{{cdate}}" start="2016-09-01" end="2018-01-01" bindchange="bindDateChange">
+						<view class="picker input">
+							{{cdate}}
+						</view>
+					</picker>
+				</view>
+				<view class="cell">
+					<view class="label">当前数值</view>
+					<input class="input flex__item" type="number" name="current" placeholder="请输入当前值"/>
+				</view>
+			</view>
+			<view class="btn-area">
+					<button formType="submit" type="primary">确定</button>
+			</view>
+		</form>
+</view>

@@ -1,0 +1,20 @@
+<!-- 重复规则 -->
+<template name="repeatrule">
+	<view class="form-preview">
+		<view class="form-preview__hd select-list-wrap">
+			<view class="form-preview__item">
+				<view class="form-preview__label">重复</view>
+				<view class="form-preview__value" bindtap="handleClickRule">
+					{{ruleResult}}
+				</view>
+			</view>
+			<view class="select-list" wx:if="{{hasClickRepeatRule && ruleInfo.length}}">
+				<block wx:for="{{ruleInfo}}" wx:for-item="item" wx:key="rule_index">
+					<view class="{{index == ruleIndex ? 'active-item' : ''}}" hover-class="active-item" bindtap="handleRuleItem" data-rule="{{item.id}}">
+						{{item.name}}
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+</template>

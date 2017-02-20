@@ -1,0 +1,10 @@
+.about-page {
+	padding: 0 12rpx;
+}
+.about-page .article__p {
+	text-indent: 2em;
+}
+.about-item image {
+	margin: 1em auto;
+	display: block;
+}

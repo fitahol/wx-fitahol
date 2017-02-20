@@ -1,0 +1,98 @@
+<!--logs.wxml-->
+<view class="page">
+	<view class="page__bd">
+		<!-- 搜索 -->
+		<form bindsubmit="searchSubmit">
+			<view class="search-bar">
+				<view class="search-bar__form">
+					<view class="search-bar__box">
+							<icon class="icon-search_in-box" type="search" size="14"></icon>
+							<input type="text" name="query" class="search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+							<view class="icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+									<icon type="clear" size="14"></icon>
+							</view>
+					</view>
+					<label class="search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+							<icon class="icon-search" type="search" size="14"></icon>
+							<view class="search-bar__text">学员ID/手机号/昵称</view>
+					</label>
+				</view>
+				<button class="search-bar__cancel-btn mini-btn" size="mini" formType="submit" type="default">搜索学员</button>
+			</view>
+		</form>
+
+		<view wx:if="{{!searchResult.length}}" class="page__bd" >
+			<block wx:for="{{relationList.results}}" wx:for-item="item" wx:key="relation_{{item.user_id}}">
+				<!-- 请求添加列表 -->
+				<view class="add-member-result add-member-list">
+					<view class="media-box media-box_appmsg" hover-class="cell_active">
+						<image class="add-member-avator" src="{{item.sender.portrait}}" background-size="cover" style="width: 128rpx;height: 128rpx;"></image>
+						<view class="media-box__bd media-box__bd_in-appmsg add-member-serachinfo">
+								<view class="media-box__title">昵称：{{item.sender.nickname || '暂无'}}</view>
+								<view class="media-box__title">请求添加</view>
+						</view>
+					</view>
+					<view class="flex add-memver-btnwrap">
+						<form
+							bindsubmit="relationConfirm"
+							data-user="{{item.sender.user_id}}"
+							data-relation="{{item.id}}"
+							data-status="-1"
+							report-submit="true"
+							class="flex__item">
+							<button
+								class="btn"
+								formType="submit"
+								hover-class="form-preview__btn_active"
+							>
+								拒绝
+							</button>
+						</form>
+						<form
+							bindsubmit="relationConfirm"
+							data-user="{{item.id}}"
+							data-relation="{{item.id}}"
+							data-status="1"
+							report-submit="true"
+							class="flex__item">
+							<button
+								class="btn"
+								formType="submit"
+								type="primary"
+								hover-class="form-preview__btn_active"
+							>
+								接受
+							</button>
+						</form>
+					</view>
+				</view>
+			</block>
+		</view>
+		<view wx:if="{{searchResult.length}}"class="page__bd">
+			<block wx:for="{{searchResult}}" wx:for-item="item" wx:key="search_{{item.user_id}}">
+				<!-- 搜索新朋友添加列表 -->
+				<view class="add-member-result">
+					<view class="media-box media-box_appmsg" hover-class="cell_active">
+						<image class="add-member-avator" src="{{item.portrait}}" background-size="cover" style="width: 128rpx;height: 128rpx;"></image>
+						<view class="media-box__bd media-box__bd_in-appmsg add-member-serachinfo">
+								<view class="media-box__title">昵称：{{item.nickname || '暂无'}}</view>
+								<view class="media-box__title">个性签名: {{item.intro}}</view>
+						</view>
+					</view>
+					<form
+						bindsubmit="addRelation"
+						data-user="{{item.id}}"
+						report-submit="true">
+						<button
+							class="btn add-btn"
+							type="primary"
+							formType="submit"
+							hover-class="form-preview__btn_active">
+							添加学员
+						</button>
+					</form>
+				</view>
+			</block>
+	</view>
+</view>
+</view>

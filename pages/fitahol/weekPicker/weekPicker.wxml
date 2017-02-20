@@ -1,0 +1,14 @@
+<import src="weekTitle.wxml" />
+<import src="../hourPicker/hourPicker.wxml" />
+<template name="week">
+	<template is="weekTitle" data="{{EnglishWeekArr, weekTitleInfo, nowDateInfo, tapItem}}" />
+	<view
+		class="week-list-wrap"
+		bindtouchstart="handleTouchstart"
+		bindtouchend="handleTouchend"
+		animation="{{animateData}}"
+		data-id="slide1"
+	>
+		<template is="hourPicker" data="{{hourTitleInfo, weekTitleInfo, nowDateInfo, tapItem}}" />
+	</view>
+</template>

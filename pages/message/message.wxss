@@ -1,0 +1,16 @@
+.message-unread {
+	position: absolute;
+	right: 30rpx;
+	top: 12rpx;
+	width: 36rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	text-align: center;
+	border-radius: 50%;
+	background: #f7604f;
+	color: #fff;
+	font-size: 16rpx;
+}
+.message-wrap .media-box:before {
+	left: 0;
+}

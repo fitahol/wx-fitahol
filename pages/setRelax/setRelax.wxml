@@ -1,0 +1,12 @@
+<!-- <import src="dateTime/startCourse.wxml" />
+<import src="dateTime/endCourse.wxml" />
+<import src="repeat/repeatRule.wxml" />
+<import src="repeat/repeatTimes.wxml" />
+<import src="dateTime/endRepeatTime.wxml" />
+<import src="repeat/repeatWeek.wxml" /> -->
+<import src="../buildCourse/buildCourse.wxml" />
+
+<view class="build-course-page">
+	<!-- 新建课程 -->
+		<template is="build" data="{{startDate, startTime, endDate, endTime, ruleInfo, ruleResult, hasClickRepeatRule, ruleIndex, ruleIndex, enWeekCustom, chooseWeekInfo, chooseWeekIndex, enWeekCustomClass, endRepeatDate, endRepeatTime, ruleIndex,repeatTimes}}"></template>
+</view>

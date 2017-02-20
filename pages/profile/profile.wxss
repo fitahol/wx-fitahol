@@ -1,0 +1,67 @@
+/**index.wxss**/
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.userinfo-avatar {
+	width: 120rpx;
+	height: 120rpx;
+	margin: 20rpx;
+	border-radius: 50%;
+}
+
+.profile-info-wrap {
+	border-top: 12rpx solid #edf0f5;
+	border-bottom: 12rpx solid #edf0f5;
+	padding-right: 20rpx;
+	line-height: 3.2em;
+}
+.profile-info-wrap .select {
+	border: 0 none;
+}
+.profile-info-wrap .textarea {
+	line-height: 32rpx;
+	height: 32rpx;
+}
+.confirm-profile {
+	margin-top: 2em;
+}
+.primary-field {
+	overflow: hidden;
+}
+.primary-field-item {
+	width: 25%;
+	float: left;
+	padding: 0 4rpx;
+	margin-top: 8rpx;
+	box-sizing: border-box;
+	text-align: center;
+	height: 1.8em;
+	line-height: 1.8em;
+}
+.primary-field-item text {
+	background: #edf0f5;
+	display: inline-block;
+	width: 100%;
+	font-size: 24rpx;
+	border-radius: 6rpx;
+	color: #999;
+}
+.primary-field-item .active {
+	background: #1AAD19;
+	color: #fff;
+}
+
+.gym-wrap {
+	padding-bottom: 2.5em;
+	position: relative;
+}
+.gym-unfind {
+	position: absolute;
+	right: 20rpx;
+	bottom: 0;
+	color: #888;
+	font-size: 24rpx;
+}

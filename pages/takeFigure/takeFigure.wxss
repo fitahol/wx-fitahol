@@ -1,0 +1,21 @@
+.take-figure-wrap {
+}
+.figure-wrap{
+	/*padding-right: 30rpx;*/
+	border-bottom: 2rpx solid #d9d9d9;
+	/*margin: 0 30rpx;*/
+}
+.figure-wrap .cell:before {
+	left: 0;
+}
+.take-figure-wrap .textarea {
+	height: 4em;
+	line-height: 2em;
+}
+.uploader-wrap {
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+.choose-upload {
+	padding-left: 2em;
+}

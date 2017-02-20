@@ -1,0 +1,11 @@
+<form bindsubmit="confirmForm">
+	<view class="add-course-desc">已购课程{{amount}}课时，剩余{{remain}}节。</view>
+	<view class="flex add-course-wrap">
+		<view class="">追加课时</view>
+		<input class="flex__item" type="number" name="remain" placeholder="0" />
+		<view>节</view>
+	</view>
+	<view class="btn-area">
+			<button formType="submit" type="primary">确定</button>
+	</view>
+	</form>

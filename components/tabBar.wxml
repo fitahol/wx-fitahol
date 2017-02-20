@@ -1,0 +1,10 @@
+<template name="tabbar">
+	<view class="footer flex">
+		<block wx:for="{{tabBarList}}" wx:key="tabbar_{{index}}">
+			<navigator class="flex__item" url="{{item.pagePath}}">
+				<image src="{{item.iconPath}}"></image>
+				<text>{{item.text}}</text>
+			</navigator>
+		</block>
+	</view>
+</template>

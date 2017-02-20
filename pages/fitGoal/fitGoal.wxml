@@ -1,0 +1,28 @@
+<view class="add-fitgoal-container">
+		<form bindsubmit="formSubmit">
+			<view class="">
+				<view class="cell">
+					<view class="label">目标名称</view>
+					<input class="input flex__item" name="name" placeholder="{{fitGoal.name || '请输入目标名称'}}"/>
+				</view>
+				<view class="cell">
+					<view class="label">目标单位</view>
+					<input class="input flex__item" name="measure" placeholder="{{fitGoal.measure || '单位：例如KG'}}"/>
+				</view>
+				<view class="cell">
+					<view class="label">目标数值</view>
+					<input class="input flex__item" type="number" name="goal" defaultValue="{{fitGoal.goal}}" placeholder="{{fitGoal.goal || '请输入目标数值'}}"/>
+				</view>
+				<view class="cell remark">
+						<view class="label">备注说明</view>
+						<textarea name="desc" class="textCenter textarea flex__item" placeholder="{{fitGoal.desc || ''}}" />
+				</view>
+			</view>
+			<view class="btn-area">
+					<button formType="submit" type="primary">确定</button>
+			</view>
+			<view wx:if="{{fitGoal.id}}" class="btn-area">
+					<button type="warn" data-fitgoalid="{{fitGoal.id}}" bindtap="delFitGoal">删除</button>
+			</view>
+		</form>
+</view>

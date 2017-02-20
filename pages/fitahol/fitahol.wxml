@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<!-- 模板引入 -->
+<import src="weekPicker/weekPicker.wxml" />
+<!-- <import src="../../components/tabBar.wxml" /> -->
+<view
+	class="container fitahol-conatiner"
+>
+	<text class="title-MY">{{month}}月</text>
+	<template
+		is="week"
+		data="{{ EnglishWeekArr: EnglishWeekArr, weekTitleInfo: weekTitleInfo, animateData: animateData, hourTitleInfo: hourTitleInfo, nowDateInfo: nowDateInfo, tapItem: tapItem }}"
+	/>
+	<view class="{{backTodayStatus ? 'snap snap-show':'snap snap-hide'}}" catchtap="backToday">今</view>
+	<navigator
+		class="{{backTodayStatus ? 'snap snap-hide':'snap snap-show'}}"
+		url="/pages/setRelax/setRelax"
+		>
+		<image src="../../images/icons/relax.png" style="width: 30px;height: 30px"></image>
+	</navigator>
+	<!-- <template is="tabbar" data="{{tabBarList: tabBarList}}">
+	</template> -->
+</view>

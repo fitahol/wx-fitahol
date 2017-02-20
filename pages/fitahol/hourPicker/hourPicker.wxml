@@ -1,0 +1,11 @@
+<import src="hourItem.wxml" />
+<template name="hourPicker">
+	<scroll-view scroll-y="true" style="height: 100%;" class="hour-list" scroll-into-view="hour-item8">
+		<block wx:for="{{hourTitleInfo}}" wx:key="hour_{{index}}">
+			<view class="hour-item" id="hour-item{{index}}">
+				<text class="hour-item-title">{{item}}:00</text>
+				<template is="hourItem" data="{{hourItemTitleInfo: item, nowDateInfo, weekTitleInfo, tapItem}}" />
+			</view>
+		</block>
+	</scroll-view>
+</template>

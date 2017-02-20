@@ -1,0 +1,78 @@
+<view class="container add-action-container">
+	<scroll-view scroll-y="true" style="height: 100%;" class="category-list">
+		<block wx:for="{{categoryList}}" wx:for-item="categoryItem" wx:key="index">
+			<view
+				class="{{category_id == categoryItem.id ? 'category-item border-bottom list choose-item' : 'category-item border-bottom list'}}"
+				hover-class="active-item">
+				<image src="{{categoryItem.icon}}" class="reducer-zindex" />
+				<text class="category-desc reducer-zindex">{{categoryItem.name}}</text>
+				<view
+					class="cover"
+					data-categoryid="{{categoryItem.id}}"
+					bindtap="getCategoryChildList"
+				>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+	<template is="categorychildlist" data="{{categoryChildList, drawerAnimation, editorItem}}"></template>
+</view>
+
+<!-- 子动作  -->
+<template name="categorychildlist">
+	<scroll-view scroll-y="true" style="height: 100%;" class="category-sub-list">
+		<block wx:for="{{categoryChildList}}" wx:for-item="categoryChildItem" wx:key="index">
+			<view
+				class="{{editorItem.actionid == categoryChildItem.id ? 'category-sub-item border-bottom list choose-item' : 'category-sub-item border-bottom list'}}"
+				hover-class="cell_active">
+				<image src="{{categoryChildItem.icon_url}}" class="reducer-zindex" />
+				<text class="category-desc reducer-zindex">{{categoryChildItem.name}}</text>
+				<image
+					src="../../images/icons/add.png"
+					class="add-icon reducer-zindex"
+				/>
+				<text class="first-letter">{{categoryChildItem.first_letter}}</text>
+				<view
+					class="cover"
+					data-actionid="{{categoryChildItem.id}}"
+					data-icon="{{categoryChildItem.icon_url}}"
+					data-name="{{categoryChildItem.name}}"
+					data-desc="{{categoryChildItem.desc}}"
+					bindtap="showChangeAction"
+				>
+				</view>
+			</view>
+		</block>
+		<template is="drawer" data="{{editorItem, drawerAnimation}}"></template>
+	</scroll-view>
+</template>
+
+<!-- drawer -->
+<template name="drawer">
+	<view
+		class="drawer-wrap drawer-wrap-show"
+		animation="{{drawerAnimation}}"
+		catchtap="hideDrawer"
+		data-editorstatus="1">
+		<view>
+			<image src="{{editorItem.icon}}" />
+			<text>{{editorItem.name}}</text>
+		</view>
+		<view class="drawer-container-input list">
+			<text>重量</text>
+			<input type="number" placeholder="重量" bindinput="changeWeight" />
+			<text>KG</text>
+		</view>
+		<view class="drawer-container-input list">
+			<text>次数</text>
+			<input type="number" placeholder="次数" bindinput="changeTimes" />
+			<text>次</text>
+		</view>
+		<view catchtap="addAction" class="add-action">
+				<button class="btn" type="primary">确定</button>
+		</view>
+		<scroll-view class="list descInfo" scroll-y="true" scroll-into-view="action-desc" >
+			<text>{{editorItem.desc}}</text>
+		</scroll-view>
+	</view>
+</template>

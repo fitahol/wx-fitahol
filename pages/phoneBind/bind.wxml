@@ -1,0 +1,22 @@
+<view class="">
+		<form bindsubmit="confirmBind">
+			<view class="form-wrap">
+				<view wx:if="{{profile.phone}}" class="cell">
+					<view class="label">已绑定</view>
+					<input class="input" value="{{profile.phone}}" disabled />
+				</view>
+				<view class="cell">
+					<view class="label">手机号</view>
+					<input wx:key="account" name="account" class="input" bindinput="changePhone" placeholder="请输入手机号"/>
+				</view>
+				<view class="cell">
+					<view class="label">验证码</view>
+					<input wx:key="valid_code" name="valid_code" class="input" bindinput="changeVcode" placeholder="输入验证码" />
+					<view class="vcode-btn bind-vcode-btn" bindtap="sendVcode">{{vcodeText}}</view>
+				</view>
+			</view>
+			<view class="btn-area">
+					<button formType="submit" type="primary">确定</button>
+			</view>
+		</form>
+</view>

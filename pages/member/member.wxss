@@ -1,0 +1,30 @@
+.member-container {
+	padding: 16rpx;
+}
+
+.member-avatar {
+	width: 80rpx;
+	height: 80rpx;
+	margin: -5rpx 10rpx;
+	border-radius: 50%;
+}
+
+.add-member {
+	margin: 0 0 24rpx;
+	background: #fff;
+}
+
+.member-list {
+	background: #fff;
+}
+.member-item {
+	margin-right: 20rpx;
+}
+.member-container .cell::before {
+	left: 20rpx;
+}
+
+.add-member-unread {
+	top: 1.2em;
+	left: 32%;
+}

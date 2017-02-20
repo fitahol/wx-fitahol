@@ -1,0 +1,39 @@
+.figure-detail-wrap {
+	overflow: hidden;
+	margin-top: -12rpx;
+	font-size: 26rpx;
+}
+.figure-detail-item {
+	margin-top: 12rpx;
+	padding: 10rpx 20rpx 30rpx;
+	width: 50%;
+	float: left;
+	box-sizing: border-box;
+	border-bottom: 6rpx solid #edf0f5;
+	position: relative;
+}
+.figure-detail-item image {
+	vertical-align: top;
+	width: 100%;
+	padding-top: 10rpx;
+}
+.figure-detail-item .delete-icon {
+	position: absolute;
+	right: 20rpx;
+	bottom: 38rpx;
+}
+.figure-detail-item text {
+	display: block;
+}
+.figure-desc {
+	color: #999;
+	height: 3em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 24rpx;
+	padding-right: 2em;
+}
+.to-takefigure {
+	padding: .8em 0 .2em;
+	text-align: right;
+}

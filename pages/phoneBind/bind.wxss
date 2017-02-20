@@ -1,0 +1,4 @@
+.bind-vcode-btn {
+	font-size: 28rpx;
+	margin-left: 70rpx;
+}

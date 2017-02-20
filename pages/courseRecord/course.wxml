@@ -1,0 +1,13 @@
+<view class="page course-record-page">
+	<block wx:for="{{courseList}}" wx:for-item="item" wx:key="course_{{item.id}}">
+		<navigator url="/pages/memberCourse/course?user_id={{item.user.user_id}}&event_id={{item.id}}&event_state={{item.state}}" class="media-box media-box_appmsg" hover-class="cell_active">
+				<view class="media-box__hd media-box__hd_in-appmsg">
+						<image class="media-box__thumb" src="{{item.user.portrait}}" />
+				</view>
+				<view class="media-box__bd media-box__bd_in-appmsg">
+						<view class="media-box__title">{{item.user.nickname}}</view>
+						<view class="media-box__desc">课程时间：{{item.start}} 至 {{item.end}}</view>
+				</view>
+		</navigator>
+	</block>
+</view>

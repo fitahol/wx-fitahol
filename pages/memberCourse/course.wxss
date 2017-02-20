@@ -1,0 +1,105 @@
+.purchased-course-wrap {
+	position: relative;
+	padding: 20rpx 0 100rpx 30rpx;
+	border-bottom: 10rpx solid #edf0f5;
+}
+.purchased-btn {
+	position: absolute;
+	right: 12rpx;
+	bottom: 10rpx;
+}
+
+/*列表*/
+.action-list{
+	background-color: #fff;
+	border-top: 1px solid #edf0f5;
+	border-bottom: 1px solid #edf0f5;
+}
+.action-list-item{
+	padding: .5em 1em 2em;
+	position: relative;
+	border-bottom: 4px solid #edf0f5;
+}
+.action-list-item:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.action-btn {
+	margin: 1em -.5em 0 0;
+	height: 2.3em;
+	display: inline-block;
+	float: right;
+}
+.action-name{
+	position: absolute;
+	left: 1em;
+	top: 1em;
+	padding-bottom: 2em;
+	text-align: center;
+}
+.action-desc {
+	padding-left: 140rpx;
+}
+.action-name:after{
+	content: attr(data-content);
+	display: block;
+	line-height: 2em;
+	height: 2em;
+	overflow: hidden;
+}
+.action-desc {
+	/*padding-top: .5em;*/
+}
+.action-desc-item {
+	overflow: hidden;
+	margin-top: .6em;
+}
+.action-desc-first {
+	/*line-height: 1.5em;*/
+	float: left;
+}
+.action-desc-second {
+	float: left;
+}
+.action-desc-second text{
+	float: left;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	border: 1px solid #edf0f5;
+	font-weight: bold;
+	font-size: 32rpx;
+	margin: 0 20rpx;
+}
+.action-desc-second input{
+	float: left;
+	text-align: center;
+	border: 1px solid #edf0f5;
+	width: 8em;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+.delete-icon {
+	position: absolute;
+	right: 1em;
+	top: 2.4em;
+	width: 50rpx;
+	height: 50rpx;
+}
+.footer-course{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+.footer-course-btn{
+	width: 50%;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 2.4em;
+	border: 0 none;
+}

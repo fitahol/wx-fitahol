@@ -1,0 +1,43 @@
+<view class="about-page article">
+	<view class="article__h1"> 关于Fitahol </view>
+	<view class="article__p">
+		让健身教练爱不释手的课程&学员管理工具
+		方便快捷的全平台支持，高度可视化的健身数据
+	</view>
+	<view class="about-container">
+		<view class="about-item">
+			<view class="article__title">一、管理更多学员</view>
+			<view class="article__p">不仅能够帮助私教整理学员资料，并且能够跟踪每次上课纪录：总课程数、已完成课程、未完成课程、剩余的课程、充值次数……</view>
+			</view>
+			<image src="https://api.fitahol.com/static/assets/images/membership.jpg"></image>
+		<view class="about-item">
+			<view class="article__title">二、降低管理成本</view>
+			<view class="article__p">1. 每天提交课表给管理层，很花时间？备课想动作耗时？</view>
+			<view class="article__p">2. 快速单节排课、记课、备课；批量操作课程。</view>
+			<view class="article__p">3. 附带庞大的健身动作库和相关视频说明，更方便您定制自己的私有动作库。</view>
+			<view class="article__p">4. 一键截屏，分享学员、抄送领导，每日课程一目了然。</view>
+			<image src="https://api.fitahol.com/static/assets/images/costing.jpg"></image>
+		</view>
+		<view class="about-item">
+			<view class="article__title">三、学员在线课时预约</view>
+			<view class="article__p">
+				学员约课总会询问空闲期时间段？学员也可登录平台绑定私教，随时查看私教每日课程、剩余时间，快捷预约。
+			</view>
+			<image src="https://api.fitahol.com/static/assets/images/booking.jpg"></image>
+		</view>
+			<view class="about-item">
+			<view class="article__title">四、降低课时损失</view>
+			<view class="article__p">
+				学员约定时间未到，无故翘课。造成课时费损失？教练好提前3小时推送提醒学员上课，避免学员更改计划而未通知私教。
+			</view>
+			<image src="https://api.fitahol.com/static/assets/images/reminder.jpg" ></image>
+		</view>
+		<view class="about-item">
+			<view class="article__title">五、学员状态跟踪</view>
+			<view class="article__p">
+					不知道学员剩余多少课时？什么时候该续课了？不知道学员健身目标？不知道学员当前与目前的偏差？学员信息中直观显示学员上次上课时间、下次上课时间。学员目标和当前状态可视化的形成对比曲线，辅助教练和学员推进目标。
+			</view>
+			<image src="https://api.fitahol.com/static/assets/images/losing.jpg" ></image>
+		</view>
+	</view>
+</view>

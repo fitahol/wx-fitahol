@@ -1,0 +1,57 @@
+
+.searchbar-result {
+    margin-top: 0;
+    font-size: 28rpx;
+}
+.searchbar-result:before {
+    display: none;
+}
+.cell {
+    padding: 24rpx;
+}
+.build-course-page .form-preview:before {
+	border-top: 0 none;
+}
+.build-course-page .form-preview__label{
+	min-width: 2.5em;
+	color: #333;
+}
+.build-course-page .form-preview{
+	margin: 0 30rpx;
+}
+.build-course-page .form-preview__hd {
+	padding: 20rpx 0;
+}
+.build-course-page .select-list-wrap {
+	padding-right: 30rpx;
+}
+/*.repeat-times-wrap input {
+	line-height: 2.5em;
+	display: inline-block;
+}*/
+.repeat-times-wrap text{
+	width: 3em;
+}
+textarea {
+	width: 92%;
+	box-sizing: border-box;
+	height: 144rpx;
+	border-radius: .3rem;
+	line-height: 36rpx;
+	/*text-indent: 2em;*/
+	border: 1px solid rgba(0,0,0,.15);
+	margin: 48rpx 4%;
+	padding: 12rpx;
+	font-size: 32rpx;
+	word-break: break-all;
+}
+.repeat-week-wrap {
+	margin: 20rpx;
+	margin-bottom: 0;
+	padding-bottom: 20rpx;
+	border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.repeat-week-item{
+	width: 25%;
+	display: inline-block;
+}

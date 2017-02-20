@@ -1,0 +1,14 @@
+<template name="weekTitle">
+	<view class="week-title">
+		<block wx:for="{{weekTitleInfo}}" wx:key="weekinfo_{{index}}">
+			<view class="week-title-item">
+					<text>{{EnglishWeekArr[index]}}</text>
+					<text
+					class="{{(item.year == nowDateInfo.year && item.month == nowDateInfo.month && item.day == nowDateInfo.day) ? 'now-date' : ''}}"
+					>
+						{{item.day}}
+					</text>
+			</view>
+		</block>
+	</view>
+</template>

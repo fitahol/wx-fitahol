@@ -1,5 +1,18 @@
 #wx-fitahol 开发文档#
 
+#APP示例
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3820.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3821.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3822.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3823.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3824.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3825.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3826.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3827.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3828.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3829.PNG" width = "200" alt="图片名称" align=center />
+<img src="https://github.com/fitahol/wx-fitahol/blob/master/screen/IMG_3830.PNG" width = "200" alt="图片名称" align=center />
+
 *1.components:  公用组件
 	在pages中引用： <import src="../../components/wxTemplate.wxml" />
 								<block wx:for="{{[1, 2]}}">
